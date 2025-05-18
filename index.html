@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -46,15 +46,23 @@
       animation-duration: 4s;
       animation-delay: 2.1s;
     }
+
+    @supports (-moz-touch-enabled: 1) {
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-zinc-900 text-zinc-200">
 
+  <header class="sticky w-full top-0 z-50">
+    <nav class="bg-zinc-800/30 absolute backdrop-blur-md w-full border-b-0 py-4 px-6 md:px-8 lg:px-12">
+      <div class=" mx-auto flex justify-between items-center ">
 
-  <header class="sticky top-0 z-50 ">
-    <nav class="  absolute  bg-zinc-800/30  backdrop-blur-md w-full border-b0 py-4 px-6 md:px-8 lg:px-12 ">
-      <div class="flex justify-between items-center ">
         <div>
           <img id="logo" alt="Logo" class="w-32 " />
         </div>
@@ -76,17 +84,17 @@
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex gap-16">
-          <li><a href="#" class="hover:text-primary-600 font-light">Home</a></li>
-          <li><a href="#" class="hover:text-primary-600 font-light">About</a></li>
-          <li><a href="#" class="hover:text-primary-600 font-light">Contact</a></li>
+          <li><a href="#home" class="hover:text-primary-600 font-light">Home</a></li>
+          <li><a href="#sponsor" class="hover:text-primary-600 font-light">Sponsor</a></li>
+          <li><a href="#host" class="hover:text-primary-600 font-light">Host</a></li>
         </ul>
       </div>
 
       <!-- Mobile Menu -->
       <ul id="mobile-menu" class="mt-4 hidden flex flex-col justify-center items-center gap-2 md:hidden">
-        <li><a href="#" class="block w-full  py-2 hover:text-primary-600">Home</a></li>
-        <li><a href="#" class="block w-full  py-2 hover:text-primary-600">About</a></li>
-        <li><a href="#" class="block  w-full py-2 hover:text-primary-600">Contact</a></li>
+        <li><a href="#home" class="block w-full  py-2 hover:text-primary-600 ">Home</a></li>
+        <li><a href="#sponsor" class="block w-full  py-2 hover:text-primary-600">Sponsor</a></li>
+        <li><a href="#host" class="block  w-full py-2 hover:text-primary-600">Host</a></li>
       </ul>
     </nav>
 
@@ -96,33 +104,34 @@
 
 
   <!-- 1st section-->
-  <section class="pt-24 md:pt-28 bg-[url('/background-1.png')] bg-cover flex items-center justify-center bg-top">
+  <section id="home"
+    class="pt-24 md:pt-28   flex items-center justify-center  bg-[url('/background-1.png')]  bg-contain md:bg-cover bg-no-repeat  bg-[center_67px]">
 
 
     <div
-      class="container max-w-contain flex flex-col items-center  justify-center gap-8 lg:gap-12 mx-6 md:mx-8 lg:mx-12">
+      class="container max-w-contain flex flex-col items-center  justify-center gap-8 lg:gap-12 px-6 md:px-8 lg:px-12">
 
       <!-- announcement-->
       <div
         class="flex flex-col items-center px-4 lg:px-6 py-3 gap-1 md:gap-2 text-center bg-primary-900/30 border-2 border-primary-600/80 rounded-lg shadow-lg shadow-primary-200/10">
-        <h3 class=" text-primary-500 font-bold">First Trail Launches In</h3>
+        <h3 class=" text-primary-500 font-light uppercase text-xs md:text-sm ">First Trail Launches In</h3>
 
         <div class="flex flex-row items-center p-0 gap-4 md:gap-5 grow-0">
           <p class="text-center">
             <span class="block text-xl md:text-2xl   font-bold">28</span>
-            <span class="block text-xs text-primary-100/60 font-bold">DAYS</span>
+            <span class="block text-xs text-primary-100/60 ">DAYS</span>
           </p>
           <p class="text-center">
             <span class="block  text-xl md:text-2xl   font-bold">14</span>
-            <span class="block text-xs text-primary-100/60 font-bold">HOUR</span>
+            <span class="block text-xs text-primary-100/60 ">HOUR</span>
           </p>
           <p class="text-center">
             <span class="block  text-xl md:text-2xl font-bold">01</span>
-            <span class="block text-xs text-primary-100/60  font-bold">MIN</span>
+            <span class="block text-xs text-primary-100/60  ">MIN</span>
           </p>
           <p class="text-center">
             <span class="block  text-xl md:text-2xl   font-bold">22</span>
-            <span class="block text-xs text-primary-100/60 font-bold">SEC</span>
+            <span class="block text-xs text-primary-100/60 ">SEC</span>
           </p>
 
         </div>
@@ -145,17 +154,17 @@
           the experience and get featured
           in a
           unique city-wide adventure.</p>
-        <div class=" w-full flex flex-col  gap-8 xs:flex-row  justify-center pb-14 lg:pb-32">
-          <button
-            class=" xs:w-auto px-4 md:px-8 py-4 grow-1 bg-primary-400  leading-none text-zinc-900 font-semibold rounded-md hover:bg-primary-200  hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
+        <div class="w-full flex flex-col sm:flex-row justify-center items-center gap-8 pb-14 lg:pb-32">
+          <button onclick="document.getElementById('sponsor').scrollIntoView()"
+            class="flex-1 max-w-xs w-full px-4 md:px-8 py-4 bg-primary-400 leading-none text-zinc-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
             Join Our Sponsors
           </button>
-          <button
-            class=" xs:w-auto px-4 md:px-8 py-4  bg-primary-400  leading-none text-gray-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
+
+          <button onclick="document.getElementById('host').scrollIntoView()"
+            class="flex-1 max-w-xs w-full px-4 md:px-8 py-4 bg-primary-400 leading-none text-gray-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
             Host a POS stand
           </button>
         </div>
-
 
       </div>
     </div>
@@ -164,7 +173,7 @@
 
 
   <!-- ======== SECTION 2 SPONSOR =======    -->
-  <section class=" relative pt-24  lg:pt-32  mb-24 lg:pb-32 mx-6 md:mx-8 lg:mx-12">
+  <section id="sponsor" class=" relative pt-20  lg:pt-28  pb-24 lg:pb-32 px-6 md:px-8 lg:px-12 ">
 
 
     <svg
@@ -211,10 +220,10 @@
 
     <div class="container  max-w-contain flex flex-col items-center text-center ">
       <h2
-        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide  font-light pb-8 lg:pb-12">
+        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide  font-light pb-4 lg:pb-8">
         Become a
         Sponsor</h2>
-      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px]  pb-4 xs-pb-8 lg:pb-12">Showcase
+      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px]    pb-10 lg:pb-14">Showcase
         your coin
         or brand
         to a
@@ -223,7 +232,7 @@
     </div>
 
 
-    <form class="max-w-[932px] mx-auto space-y-8 flex flex-col items-center">
+    <form class="max-w-[932px] mx-auto space-y-4 md:space-y-8  flex flex-col items-center">
       <!-- Company Name -->
       <div class="max-w-[450px] w-full">
         <label class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
@@ -231,7 +240,7 @@
           class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
       </div>
 
-      <div class="flex flex-col md:flex-row gap-8 w-full items-center">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
         <!-- Brand -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Brand to Feature</label>
@@ -247,7 +256,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-8 w-full items-center">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
         <!-- Email -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Email address</label>
@@ -264,7 +273,7 @@
 
       </div>
 
-      <div class="flex flex-col md:flex-row gap-8 w-full items-center">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
         <!-- Reword Coin -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Select reward meme coin</label>
@@ -282,7 +291,7 @@
       </div>
 
       <!-- Cards Plan  -->
-      <div class="flex flex-col md:flex-row gap-8 w-full items-center">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
         <div class="text-sm text-white w-full m-auto">
 
 
@@ -460,11 +469,11 @@
   </section>
 
 
-  <section class=" relative pt-24 lg:pt-32  mb-24 lg:pb-32  mx-6 md:mx-8 lg:mx-12">
+  <section id="host" class=" relative pt-20 lg:pt-28  pb-24 lg:pb-32 px-6 md:px-8 lg:px-12">
     <!-- ======== SECTION 3 HOSTS =======    -->
 
     <svg
-      class="absolute left-0 xl:left-[10%] top-[10%] -translate-y-1/2 z-[-10] w-[300px] h-[301px] lg:w-[400px] lg:h-[401px] "
+      class="absolute left-0 xl:left-[10%] top-[10%]  -translate-y-1/2 z-[-10] w-[300px] h-[301px] lg:w-[400px] lg:h-[401px]  "
       viewBox="0 0 400 401" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle class="dot blink delay-100" opacity="0.74" cx="221" cy="390.679" r="1" fill="#F3D038" stroke="#F3D038"
         stroke-width="2" />
@@ -506,10 +515,10 @@
 
     <div class="container max-w-contain flex flex-col items-center  text-center">
       <h2
-        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide font-light pb-8 lg:pb-12">
+        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide font-light  pb-4 lg:pb-8">
         Host a POS
         Stand</h2>
-      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px]  pb-8 lg:pb-12">Drive more foot
+      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px] pb-10 lg:pb-14">Drive more foot
         traffic to
         your
         cafe or store. Be part of an exciting new movement and reward your customers with crypto collectibles.</p>
@@ -606,7 +615,7 @@
 
   <section>
     <footer
-      class="px-4 xs:px-6 md:px-8 lg:px-12 text-lg font-light bg-zinc-800 border-t-2 border-primary-900 text-primary-200/50 py-24">
+      class="px-6 md:px-8 lg:px-12 text-lg font-light bg-zinc-800 border-t-2 border-primary-900 text-primary-200/50 py-24">
       <p>2025 © Liam Forde</p>
     </footer>
   </section>
