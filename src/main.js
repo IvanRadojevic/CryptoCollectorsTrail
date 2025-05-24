@@ -1,6 +1,6 @@
 // Example JavaScript file
 import './styles/style.css';
-import logo from './logo2.svg';
+import logo from './logo3.svg';
 
 document.querySelector('#logo').src = logo
 
